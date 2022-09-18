@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <controls:BasePopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kantine.Views.PopupPageVM"
@@ -12,20 +12,18 @@
 
             <Image Source="https://mambeno.dk/wp-content/uploads/2020/04/Klassiske-poelsehorn-scaled.jpg" MaximumHeightRequest="300" MaximumWidthRequest="300"/>
 
-            <Label Text="Navigate To Other Popup Page" TextColor="Black">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToPopupPageVM" />
-                </Label.GestureRecognizers>
-            </Label>
+            <Picker x:Name="picker" Title="Vælg type af kød">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Kylling</x:String>
+                        <x:String>Svin</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
             <BoxView BackgroundColor="Black" HeightRequest="1" />
-            <Label Text="Navigate to Page" TextColor="Black" >
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToNormalPage" />
-                </Label.GestureRecognizers>
-            </Label>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="80" />
                     <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="50" />
                     <ColumnDefinition Width="30" />
@@ -38,19 +36,26 @@
                 Grid.Row="1"
                 Grid.Column="2"
                 Text="-"
+                Clicked="OnCounterClickedMinus"
                 FontSize="10"
                 HorizontalOptions="Center"
                 BackgroundColor="#02425A"/>
-                <Label Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" Text="2" TextColor="Black"></Label>
-             <Button
+                <Label x:Name="Counterlabel" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" TextColor="Black" />
+                <Button
                 Grid.Row="1"
                 Grid.Column="4"
                 x:Name="CounterBtn"
                 Text="+"
+                Clicked="OnCounterClickedPlus"
                 HorizontalOptions="Center"
                 BackgroundColor="#02425A"/>
             </Grid>
             <BoxView BackgroundColor="Black" HeightRequest="1" />
+             <Button Text="Tilføj til kruv" TextColor="White" BackgroundColor="#02425A" >
+                <Button.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToNormalPage" />
+                </Button.GestureRecognizers>
+            </Button>
         </StackLayout>
     </controls:BasePopupPage.PopupContent>
 </controls:BasePopupPage>

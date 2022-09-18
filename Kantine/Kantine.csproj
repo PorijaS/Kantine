@@ -57,6 +57,7 @@
 	  <None Remove="Resources\Images\sde.png" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Images\userplaceholder.png" />
+	  <None Remove="XamarinFastEntry.Behaviors" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -93,12 +94,21 @@
 	  <MauiXaml Update="Templates\OrderTemplate.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PaymentPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CreditCardDisplayView.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="ViewModel\Base\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
+	</ItemGroup>
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionKantineHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

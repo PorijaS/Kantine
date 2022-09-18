@@ -7,7 +7,7 @@
     <ScrollView>
         <Grid>
             <StackLayout Margin="20">
-                <Image Source="sde.png" HorizontalOptions="StartAndExpand"/>
+                <Image Source="sde.png" HorizontalOptions="FillAndExpand"/>
 
                 <StackLayout Margin="0,80">
                     <Label Style="{StaticResource welcome}" FontSize="32" Text="Velkommen tilbage" HorizontalOptions="Center"/>

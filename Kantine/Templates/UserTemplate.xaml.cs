@@ -2,8 +2,8 @@
 
 public partial class UserTemplate : ContentView
 {
-	public UserTemplate()
-	{
-		InitializeComponent();
-	}
+    public UserTemplate()
+    {
+        InitializeComponent();
+    }
 }

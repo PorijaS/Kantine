@@ -2,8 +2,8 @@
 
 public partial class CreditCardDisplayView : StackLayout
 {
-	public CreditCardDisplayView()
-	{
-		InitializeComponent();
-	}
+    public CreditCardDisplayView()
+    {
+        InitializeComponent();
+    }
 }

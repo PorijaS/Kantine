@@ -2,8 +2,8 @@
 
 public partial class OrderTemplate : ContentView
 {
-	public OrderTemplate()
-	{
-		InitializeComponent();
-	}
+    public OrderTemplate()
+    {
+        InitializeComponent();
+    }
 }

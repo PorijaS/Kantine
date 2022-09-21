@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Kantine.Services
 {
@@ -11,28 +10,36 @@ namespace Kantine.Services
         public Color Dinners { get; set; }
         public Color Discover { get; set; }
         public Color JCB { get; set; }
-        public Color NotRecognized { get; set; }
+        public Color Unknown { get; set; }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null) return NotRecognized;
+            if (value is null)
+                return Unknown;
 
             var number = value.ToString();
             var numberNormalized = number.Replace("-", string.Empty);
 
-            if (visaRegex.IsMatch(numberNormalized)) return Visa;
+            if (visaRegex.IsMatch(numberNormalized))
+                return Visa;
 
-            if (amexRegex.IsMatch(numberNormalized)) return Amex;
+            else if (amexRegex.IsMatch(numberNormalized))
+                return Amex;
 
-            if (masterRegex.IsMatch(numberNormalized)) return MasterCard;
+            else if (masterRegex.IsMatch(numberNormalized))
+                return MasterCard;
 
-            if (dinnersRegex.IsMatch(numberNormalized)) return Dinners;
+            else if (dinnersRegex.IsMatch(numberNormalized))
+                return Dinners;
 
-            if (discoverRegex.IsMatch(numberNormalized)) return Discover;
+            else if (discoverRegex.IsMatch(numberNormalized))
+                return Discover;
 
-            if (jcbRegex.IsMatch(numberNormalized)) return JCB;
+            else if (jcbRegex.IsMatch(numberNormalized))
+                return JCB;
 
-            return NotRecognized;
+            else
+                return Unknown;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -2,11 +2,11 @@
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
 
-		MainPage = new AppShell();
+        MainPage = new AppShell();
 
         Routing.RegisterRoute(nameof(Register), typeof(Register));
         Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));

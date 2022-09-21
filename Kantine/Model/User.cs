@@ -1,5 +1,4 @@
-﻿using System;
-namespace Kantine.Model
+﻿namespace Kantine.Model
 {
     public class User
     {

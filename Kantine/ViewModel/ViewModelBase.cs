@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Kantine.ViewModel
 {
-    public class ViewModelBase : BindableObject
+    public partial class ViewModelBase : ObservableObject
     {
-        public virtual Task InitializeAsync(object navigationData)
-        {
-            return Task.FromResult(false);
-        }
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        bool isBusy;
+
+        [ObservableProperty]
+        string titles;
+
+        public bool IsNotBusy => !IsBusy;
     }
 }

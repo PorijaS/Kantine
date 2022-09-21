@@ -5,14 +5,14 @@
              xmlns:controls="clr-namespace:Kantine.Controls"
              xmlns:models="clr-namespace:Kantine.Model"
              xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
-             Title="PopupPageVM">
+             Title="PopupPageVM"
+             x:DataType="viewmodels:VMDetailsViewModel">
     <controls:BasePopupPage.PopupContent>
         <StackLayout Spacing="50">
-            <Label Text="Pølsehorn" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
+            <Label Text="{Binding VM.VMName}" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
+            <Image Source="{Binding VM.VMImageUrl}" MaximumHeightRequest="300" MaximumWidthRequest="300"/>
 
-            <Image Source="https://mambeno.dk/wp-content/uploads/2020/04/Klassiske-poelsehorn-scaled.jpg" MaximumHeightRequest="300" MaximumWidthRequest="300"/>
-
-            <Picker x:Name="picker" Title="Vælg type af kød">
+            <Picker x:Name="picker" Title="Vælg type">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Kylling</x:String>
@@ -53,7 +53,7 @@
             <BoxView BackgroundColor="Black" HeightRequest="1" />
              <Button Text="Tilføj til kruv" TextColor="White" BackgroundColor="#02425A" >
                 <Button.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToNormalPage" />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToPaymentPage" />
                 </Button.GestureRecognizers>
             </Button>
         </StackLayout>

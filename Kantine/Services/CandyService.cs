@@ -1,9 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+/* Unmerged change from project 'Kantine (net6.0-maccatalyst)'
+Before:
+using System;
+After:
+using Kantine.Model;
+using System;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-ios)'
+Before:
+using System;
+After:
+using Kantine.Model;
+using System;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-windows10.0.19041.0)'
+Before:
+using System;
+After:
+using Kantine.Model;
+using System;
+*/
+using
+/* Unmerged change from project 'Kantine (net6.0-maccatalyst)'
+Before:
 using System.Threading.Tasks;
 using Kantine.Model;
+After:
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-ios)'
+Before:
+using System.Threading.Tasks;
+using Kantine.Model;
+After:
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-windows10.0.19041.0)'
+Before:
+using System.Threading.Tasks;
+using Kantine.Model;
+After:
+using System.Threading.Tasks;
+*/
+Kantine.Model;
 
 namespace Kantine.Services
 {
@@ -24,9 +67,9 @@ namespace Kantine.Services
         public readonly Candy Candy1 = new Candy
         {
             CandyName = "Snickers",
-            CandyImageUrl = "https://static.wixstatic.com/media/2cd43b_bb9f07f60d434cb39e5bcb1312e982f5~mv2.png/v1/fill/w_320,h_256,q_90/2cd43b_bb9f07f60d434cb39e5bcb1312e982f5~mv2.png"
-        };      
-        
+            CandyImageUrl = "https://static.wixstatic.com/media/2cd43b_bb9f07f60d434cb39e5bcb1312e982f5~mv2.png/v1/fill/w_320,h_256,q_90/2cd43b_bb9f07f60d434cb39e5bcb1312e982f5~mv2.png"   
+        };
+
         public readonly Candy Candy2 = new Candy
         {
             CandyName = "Haribo Goldbears",

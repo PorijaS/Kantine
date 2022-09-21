@@ -5,7 +5,8 @@
              xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
              xmlns:models="clr-namespace:Kantine.Model"
              xmlns:templates="clr-namespace:Kantine.Templates"
-             BackgroundColor="{DynamicResource PrimaryColor}"   >
+             BackgroundColor="{DynamicResource PrimaryColor}"   
+             x:DataType="viewmodels:MenuViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -29,10 +30,10 @@
     </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="150" />
         </Grid.RowDefinitions>
         <!-- SLIK -->
         <Grid
@@ -45,13 +46,13 @@
         </Grid>
         <Grid
             Grid.Row="1"
-            Padding="0, 0">
+            Padding="5, 0">
             <CollectionView
                 ItemsSource="{Binding Candies}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout 
                         Orientation="Horizontal"
-                        ItemSpacing="10"/>
+                        ItemSpacing="15"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -72,13 +73,13 @@
         </Grid>
         <Grid
             Grid.Row="3"
-            Padding="0, 0">
+            Padding="5, 0">
             <CollectionView
                 ItemsSource="{Binding Vms}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout 
                         Orientation="Horizontal"
-                        ItemSpacing="10"/>
+                        ItemSpacing="15"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

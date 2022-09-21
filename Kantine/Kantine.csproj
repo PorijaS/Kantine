@@ -52,7 +52,22 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\OpenSans-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Sitka.ttc" />
+	  <None Remove="Resources\Images\card_amex.png" />
+	  <None Remove="Resources\Images\card_dinersclub.png" />
+	  <None Remove="Resources\Images\card_discover.png" />
+	  <None Remove="Resources\Images\card_jcb.png" />
+	  <None Remove="Resources\Images\card_mastercard.png" />
+	  <None Remove="Resources\Images\card_unknown.png" />
+	  <None Remove="Resources\Images\card_visa.png" />
 	  <None Remove="Resources\Images\contact.png" />
+	  <None Remove="Resources\Images\icon_chip.png" />
+	  <None Remove="Resources\Images\icon_cvv.png" />
+	  <None Remove="Resources\Images\icon_date.png" />
+	  <None Remove="Resources\Images\logo_amex.png" />
+	  <None Remove="Resources\Images\logo_dinersclub.png" />
+	  <None Remove="Resources\Images\logo_discover.png" />
+	  <None Remove="Resources\Images\logo_mastercard.png" />
+	  <None Remove="Resources\Images\logo_visa.png" />
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\sde.png" />
 	  <None Remove="Resources\Images\user.png" />
@@ -106,8 +121,15 @@
 	  <Folder Include="ViewModel\Base\" />
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+	  <PackageReference Include="Xamarin.Google.Guava.ListenableFuture">
+	    <Version>1.0.0.9</Version>
+	  </PackageReference>
+	</ItemGroup>
+
 	<ItemGroup>
-	  <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 	</ItemGroup>
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionKantineHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 

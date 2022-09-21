@@ -4,8 +4,9 @@ namespace Kantine;
 
 public partial class Menu : ContentPage
 {
-	public Menu()
-	{
-		InitializeComponent();
-	}
+    public Menu(MenuViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

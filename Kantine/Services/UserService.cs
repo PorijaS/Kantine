@@ -1,4 +1,30 @@
-﻿using System;
+﻿
+/* Unmerged change from project 'Kantine (net6.0-maccatalyst)'
+Before:
+using System;
+using Kantine.Model;
+After:
+using Kantine.Model;
+using System;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-ios)'
+Before:
+using System;
+using Kantine.Model;
+After:
+using Kantine.Model;
+using System;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-windows10.0.19041.0)'
+Before:
+using System;
+using Kantine.Model;
+After:
+using Kantine.Model;
+using System;
+*/
 using Kantine.Model;
 
 namespace Kantine.Services

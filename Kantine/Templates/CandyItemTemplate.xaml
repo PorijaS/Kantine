@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kantine.Templates.CandyItemTemplate">
+             x:Class="Kantine.Templates.CandyItemTemplate"
+             xmlns:viewmodel="clr-namespace:Kantine.ViewModel"
+             xmlns:model="clr-namespace:Kantine.Model">
     <ContentView.Resources>
         <ResourceDictionary>
 
@@ -17,7 +19,7 @@
             </Style>
 
             <Style x:Key="TitleTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontAutoScalingEnabled" Value="True" />
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -28,19 +30,25 @@
         </ResourceDictionary>
     </ContentView.Resources>
 
-    <Grid
+    <Frame BackgroundColor="Transparent" BorderColor="Transparent" HeightRequest="160" WidthRequest="200">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MenuViewModel}}, Path=GoToDetailsCandyCommand}"
+                                  CommandParameter="{Binding .}"/>
+        </Frame.GestureRecognizers>
+        <Grid
         Style="{StaticResource ProductContainerStyle}">
         <Border
         Style="{StaticResource ProductBorderStyle}">
             <Border.StrokeShape>
-                <BoxView />
+                    <BoxView BackgroundColor="Transparent"/>
             </Border.StrokeShape>
             <Image
             Source="{Binding CandyImageUrl}"/>
         </Border>
         <Label
-            Padding="0, 20, 0, 0"
+            Padding="0, 100, 0, 0"
             Style="{StaticResource TitleTextStyle}"
             Text="{Binding CandyName}" />
     </Grid>
+    </Frame>
 </ContentView>

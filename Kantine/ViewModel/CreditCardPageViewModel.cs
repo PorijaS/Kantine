@@ -1,15 +1,55 @@
-﻿using System;
-using System.ComponentModel;
+﻿
+/* Unmerged change from project 'Kantine (net6.0-maccatalyst)'
+Before:
+using Kantine.Views;
+using Kantine.Services;
+After:
+using Kantine.Services;
+using Kantine.Views;
+*/
 
+/* Unmerged change from project 'Kantine (net6.0-ios)'
+Before:
+using Kantine.Views;
+using Kantine.Services;
+After:
+using Kantine.Services;
+using Kantine.Views;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-windows10.0.19041.0)'
+Before:
+using Kantine.Views;
+using Kantine.Services;
+After:
+using Kantine.Services;
+using Kantine.Views;
+*/
 namespace Kantine.ViewModel
 {
-    public class CreditCardPageViewModel : INotifyPropertyChanged
+    public class CreditCardPageViewModel : ViewModelBase
     {
-        public string CardNumber { get; set; }
-        public string CardCvv { get; set; }
-        public string CardExpirationDate { get; set; }
+        private string _cardCvv;
+        private string _cardExpirationDate;
+        private string _cardNumber;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string CardCvv
+        {
+            get => _cardCvv;
+            set => SetProperty(ref _cardCvv, value);
+        }
+
+        public string CardExpirationDate
+        {
+            get => _cardExpirationDate;
+            set => SetProperty(ref _cardExpirationDate, value);
+        }
+
+        public string CardNumber
+        {
+            get => _cardNumber;
+            set => SetProperty(ref _cardNumber, value);
+        }
     }
 }
 

@@ -3,10 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kantine.Views.PopupPageCandy"
              xmlns:controls="clr-namespace:Kantine.Controls"
-             Title="PopupPageCandy">
+             Title="PopupPageCandy"
+             xmlns:models="clr-namespace:Kantine.Model"
+             xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
+             x:DataType="viewmodels:CandyDetailsViewModel">
     <controls:BasePopupPage.PopupContent>
-        <StackLayout Spacing="15">
-            <Label Text="Display Content Here" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+        <StackLayout Spacing="50">
+            <Label Text="{Binding Candy.CandyName}" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
+            <Image Source="{Binding Candy.CandyImageUrl}" MaximumHeightRequest="300" MaximumWidthRequest="300"/>
+
+            <Picker x:Name="picker" Title="Vælg type">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String></x:String>
+                        <x:String>Sour Cream</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <BoxView BackgroundColor="Black" HeightRequest="1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Text="-"
+                Clicked="OnCounterClickedMinus"
+                FontSize="10"
+                HorizontalOptions="Center"
+                BackgroundColor="#02425A"/>
+                <Label x:Name="Counterlabel" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" TextColor="Black" />
+                <Button
+                Grid.Row="1"
+                Grid.Column="4"
+                x:Name="CounterBtn"
+                Text="+"
+                Clicked="OnCounterClickedPlus"
+                HorizontalOptions="Center"
+                BackgroundColor="#02425A"/>
+            </Grid>
+            <BoxView BackgroundColor="Black" HeightRequest="1" />
+            <Button Text="Tilføj til kruv" TextColor="White" BackgroundColor="#02425A" >
+                <Button.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToPaymentPage" />
+                </Button.GestureRecognizers>
+            </Button>
         </StackLayout>
     </controls:BasePopupPage.PopupContent>
 </controls:BasePopupPage>

@@ -1,7 +1,27 @@
-﻿using System;
+﻿
+/* Unmerged change from project 'Kantine (net6.0-maccatalyst)'
+Before:
+using System;
+After:
 using Kantine.Model;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-ios)'
+Before:
+using System;
+After:
+using Kantine.Model;
+*/
+
+/* Unmerged change from project 'Kantine (net6.0-windows10.0.19041.0)'
+Before:
+using System;
+After:
+using Kantine.Model;
+*/
 using Kantine.Services;
 using System.Collections.ObjectModel;
+using Kantine.Model;
 
 namespace Kantine.ViewModel
 {
@@ -18,21 +38,13 @@ namespace Kantine.ViewModel
         public ObservableCollection<Order> Orders
         {
             get { return _orders; }
-            set
-            {
-                _orders = value;
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref _orders, value);
         }
 
         public ObservableCollection<User> Users
         {
             get { return _users; }
-            set
-            {
-                _users = value;
-                OnPropertyChanged();
-            }
+            set => SetProperty(ref _users, value);
         }
 
         void LoadData()
